@@ -1,0 +1,31 @@
+{
+  "Items": [
+    {
+      "cat": "phone",
+      "desc": "The Samsung Galaxy S6 is mocked by QA Cross.",
+      "id": 1,
+      "img": "imgs/galaxy_s6.jpg",
+      "price": 360.0,
+      "title": "Samsung Mocked"
+    },
+    {
+      "cat": "phone",
+      "desc": "The Nokia Lumia 1520 is mocked by QA Cross.",
+      "id": 2,
+      "img": "imgs/Lumia_1520.jpg",
+      "price": 820.0,
+      "title": "Nokia Mocked"
+    },
+    {
+      "cat": "phone",
+      "desc": "The Motorola Google Nexus 6 is mocked by QA Cross.",
+      "id": 3,
+      "img": "imgs/Nexus_6.jpg",
+      "price": 650.0,
+      "title": "Nexus Mocked"
+    }
+  ],
+  "LastEvaluatedKey": {
+    "id": "9"
+  }
+}

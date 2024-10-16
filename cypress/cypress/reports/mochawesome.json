@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-10-07T15:17:13.056Z",
+    "end": "2024-10-07T15:17:22.080Z",
+    "duration": 9024,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "764c6312-bc10-4024-b359-fd66d9bdc93d",
+      "title": "",
+      "fullFile": "cypress\\e2e\\smokeTest.cy.js",
+      "file": "cypress\\e2e\\smokeTest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5e814623-7972-4709-a48d-8f9ee61efc9f",
+          "title": "Pruebas de inicio de sesión en Zero Bank",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Check Home",
+              "fullTitle": "Pruebas de inicio de sesión en Zero Bank Check Home",
+              "timedOut": null,
+              "duration": 1034,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"http://zero.webappsecurity.com/\");\ncy.get(\".active > img\").should(\"be.visible\");",
+              "err": {},
+              "uuid": "123d9e06-95d9-41c9-b369-cc3b6acf7e4b",
+              "parentUUID": "5e814623-7972-4709-a48d-8f9ee61efc9f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Inicio de sesión exitoso",
+              "fullTitle": "Pruebas de inicio de sesión en Zero Bank Inicio de sesión exitoso",
+              "timedOut": null,
+              "duration": 3239,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"http://zero.webappsecurity.com/login.html\");\ncy.get(\"#user_login\").type(\"username\");\ncy.get(\"#user_password\").type(\"password\");\ncy.get('input[name=\"submit\"]').click();\ncy.url().should(\"include\", \"/bank/account-summary.html\");",
+              "err": {},
+              "uuid": "47eef91a-7a6c-45dd-97d2-cfb61926b270",
+              "parentUUID": "5e814623-7972-4709-a48d-8f9ee61efc9f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Inicio de sesión fallido con credenciales incorrectas",
+              "fullTitle": "Pruebas de inicio de sesión en Zero Bank Inicio de sesión fallido con credenciales incorrectas",
+              "timedOut": null,
+              "duration": 1231,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"http://zero.webappsecurity.com/login.html\");\ncy.get(\"#user_login\").type(\"usuario_incorrecto\");\ncy.get(\"#user_password\").type(\"contraseña_incorrecta\");\ncy.get('input[name=\"submit\"]').click();\ncy.get(\".alert-error\").should(\"be.visible\").and(\"contain\", \"Login and/or password are wrong.\");",
+              "err": {},
+              "uuid": "27ab079e-b2b1-478a-899c-f7b009e3b0b1",
+              "parentUUID": "5e814623-7972-4709-a48d-8f9ee61efc9f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "123d9e06-95d9-41c9-b369-cc3b6acf7e4b",
+            "47eef91a-7a6c-45dd-97d2-cfb61926b270",
+            "27ab079e-b2b1-478a-899c-f7b009e3b0b1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5504,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

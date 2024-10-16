@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-10-14T10:15:37.966Z",
+    "end": "2024-10-14T10:15:46.822Z",
+    "duration": 8856,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "009bd09b-ec7d-41e9-8ff3-7d4093acd842",
+      "title": "",
+      "fullFile": "cypress\\e2e\\form.cy.js",
+      "file": "cypress\\e2e\\form.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "95b930f2-3258-4e5a-acf5-e0185972bf94",
+          "title": "Rellenar el formulario usando datos de fixture",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Debe completar y enviar el formulario con datos del fixture",
+              "fullTitle": "Rellenar el formulario usando datos de fixture Debe completar y enviar el formulario con datos del fixture",
+              "timedOut": null,
+              "duration": 6863,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"formData\").then(data => {\n  cy.get(\"#firstName\").type(data.firstName);\n  cy.get(\"#lastName\").type(data.lastName);\n  cy.get(\"#userEmail\").type(data.email);\n  cy.get(`input[name=\"gender\"][value=\"${data.gender}\"]`).check({\n    force: true\n  });\n  cy.get(\"#userNumber\").type(data.mobile);\n  // Asumiendo que haces un selector para escoger la fecha de nacimiento\n  cy.get(\"#dateOfBirthInput\").click();\n  cy.get(\".react-datepicker__month-select\").select(\"October\");\n  cy.get(\".react-datepicker__year-select\").select(\"1990\");\n  cy.get(\".react-datepicker__day--014\").click();\n  // Añadir asignaturas\n  data.subjects.forEach(subject => {\n    cy.get(\"#subjectsInput\").type(`${subject}{enter}`);\n  });\n  // Mapear el nombre del hobby a su valor\n  const hobbyValueMap = {\n    Sports: \"1\",\n    Reading: \"2\",\n    Music: \"3\"\n  };\n  // Añadir hobbies\n  data.hobbies.forEach(hobby => {\n    const hobbyValue = hobbyValueMap[hobby];\n    cy.get(`input[type=\"checkbox\"][value=\"${hobbyValue}\"]`).check({\n      force: true\n    });\n  });\n  cy.get(\"#currentAddress\").type(data.address);\n  cy.get(\"#state\").click().get(\".css-26l3qy-menu\").contains(data.state).click();\n  cy.get(\"#city\").click().get(\".css-26l3qy-menu\").contains(data.city).click();\n  // Enviar el formulario\n  cy.get(\"#submit\").click({\n    force: true\n  });\n  // Verificar que el modal de confirmación aparece\n  cy.get(\".modal-content\").should(\"be.visible\");\n});",
+              "err": {},
+              "uuid": "017a9395-d4ae-49e6-8182-bda2eb42d749",
+              "parentUUID": "95b930f2-3258-4e5a-acf5-e0185972bf94",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "017a9395-d4ae-49e6-8182-bda2eb42d749"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6863,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "Items": [
+    {
+      "cat": "monitor",
+      "desc": "LED Cinema Display is mocked by QA Cross.",
+      "id": 10,
+      "img": "imgs/apple_cinema.jpg",
+      "price": 400.0,
+      "title": "Apple Mocked"
+    },
+    {
+      "cat": "notebook",
+      "desc": "1.6GHz dual-core Intel Core i5 is mocked by QA Cross.",
+      "id": 11,
+      "img": "imgs/macbook_air.jpg",
+      "price": 700.0,
+      "title": "MacBook air Mocked"
+    },
+    {
+      "cat": "notebook",
+      "desc": "6th Generation Intel Core i7-6500U is mocked by QA Cross.",
+      "id": 12,
+      "img": "imgs/dell.jpg",
+      "price": 700.0,
+      "title": "Dell Mocked"
+    }
+  ],
+  "LastEvaluatedKey": {
+    "id": "15"
+  },
+  "ScannedCount": 6
+}
